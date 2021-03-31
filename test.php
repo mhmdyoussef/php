@@ -42,3 +42,4 @@ class Users {
 // new User
 $user1 = new Users("Mohamed", "Youssef", "valantino29", "Giza", "01124953916", "valantino29@yahoo.com");
 $user1->getUser();
+

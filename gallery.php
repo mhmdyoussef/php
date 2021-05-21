@@ -1,7 +1,7 @@
 <?php
 ini_set('display_error', 1);
 
-function reader($directory, array $excludeFiles = ['.', '..'])
+function reader($directory, array $excludeFiles = ['.', '..']) :array|NULL
 {
     $images = [];
     if (!is_dir($directory)) {

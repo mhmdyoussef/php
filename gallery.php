@@ -1,5 +1,5 @@
 <?php
-ini_set('display_error', 1);
+
 
 function reader($directory, array $excludeFiles = ['.', '..']) :array|NULL
 {

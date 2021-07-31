@@ -1,0 +1,19 @@
+<?php
+ini_set( 'display_errors', 1 );
+
+
+$key = '4noVvMTAJllSgGhslyZuOK5ABqYztgqe';
+$url = 'https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=' . $key;
+$curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HEADER, 0);
+
+    $result = curl_exec($curl);
+    curl_close($curl);
+(array) $news = json_decode($result, true);
+
+for ($i = 0; $i < count( $news['results']); $i++ ) {
+    echo "<p class='titles'>{$news['results'][$i]['title']}</p>" . " <a href='{$news['results'][$i]['url']}'>Read article</a>" . "<br>";
+}
